@@ -1,0 +1,27 @@
+* {
+	font-family: 'Roboto', sans-serif;
+}
+html, body {
+	font-size: 16px;
+}
+
+section#demo {
+	background: #fbfbfb;
+    position: relative;
+    padding: 0;
+    min-height: 100vh;
+    transition: height 9999s;
+    margin-top: 0px;
+}
+.vertical-align {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	width: 100%;
+}
+.card {
+	background: #fff;
+    box-shadow: 5px 15px 28px 30px rgba(0, 0, 0, 0.075);
+    padding: 7px 15px;
+}

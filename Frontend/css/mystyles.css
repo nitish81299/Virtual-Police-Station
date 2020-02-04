@@ -5,22 +5,6 @@
   to {
     transform: rotate(359deg); } }
 
-figure {
-width: 1500px;
-height: 550px;
-line-height: 250px;
-text-align: center;
-}
-
-img {
-vertical-align: middle;
-}
-
-.has-image-centered {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .is-unselectable, .button, .file {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
