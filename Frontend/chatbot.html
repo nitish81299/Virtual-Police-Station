@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Victor</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/chatbot.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+</head>
+<body>
+	<body>
+    <center>
+      <h1 id="main">
+        Virtual Police Officer
+      </h1>
+    </center>
+    <center>
+    	 <img id="police"
+          src="logo/avatar.jpg"
+          style="width:80px;height:80px; margin-top: 20px;"
+        />
+    </center>
+	<section id="demo">
+	    <div class="vertical-align">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-6 col-sm-offset-3 col-xs-offset-0">
+	                    <div class="card no-border">
+	                        <div id="chat" class="conv-form-wrapper">
+	                            <form action="" method="GET" class="hidden">
+	                                <input type="text" name="welcm" data-conv-question="Hello! Welcome to virtual police station. I am Victor and I am here to help you." name="first-question" data-no-answer="true">
+	                                  <!--  <option value="yes">Yes</option>
+	                                    <option value="sure">Sure!</option>--->
+	                                <input type="text" name="name" data-conv-question="Alright! First, tell me your full name, please.|Okay! Please, tell me your name first." data-pattern="^[A-Za-z]">
+	                                <input type="text" data-conv-question="Hello, {name}:0! It's a pleasure to meet you." data-no-answer="true">
+	                              
+	                                <input type="text" name="aadhar" data-conv-question="Please enter your Aadhar Card Number" data-pattern="^[0-9]{12}" multiple>
+	                                    
+	                                <input type="text" name="contact" data-conv-question="Please enter your contact number linked to your Aadhar card." data-pattern="^[1-9]">
+	                                <!--    <option value="yes">Yes</option>
+	                                    <option value="no">No</option>
+	                               
+	                                <div data-conv-fork="programmer">
+	                                    <div data-conv-case="yes">
+	                                        <input type="text" data-conv-question="A fellow programmer! Cool." data-no-answer="true">
+	                                    </div>
+	                                    <div data-conv-case="no">
+		                                    <select name="thought" data-conv-question="Have you ever thought about learning? Programming is fun!">
+		                                    	<option value="yes">Yes</option>
+		                                    	<option value="no">No..</option>
+		                                    </select>
+	                                    </div>
+	                                </div>--->
+
+	                                <input type="text" data-conv-question="Please enter your email." data-no-answer="true">
+	                                <input data-conv-question="(The copy of a FIR will be sent to this email address.) Thank you for your patience we are almost there." data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="What's your e-mail?">
+
+	                                <input data-conv-question="Please enter your local address" type="text" required placeholder="Address">
+
+	                                <input type="text" data-conv-question="Almost there!" data-no-answer="true">
+									
+									<input data-conv-question="Please enter the place of incident." type="text" name="incident" required placeholder="incident" data-pattern="^[A-Za-z]">
+
+									<input data-conv-question="Please enter the time and of incident. (In 24 hours format.)" type="text" name="time" required placeholder="time" data-pattern="^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$">
+
+									<input data-conv-question="Can you describe the incident in detail." type="text" name="details" required placeholder="Describe">
+
+
+	                                <select data-conv-question="Thank you for your patience. You are 1 click away from filling your FIR ! Click on submit !" id="">
+	                                    <option value="">Submit</option>
+	                                </select>
+	                            </form>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="js/autosize.min.js"></script>
+	<script type="text/javascript" src="js/chatbot.js"></script>
+
+	<script>
+		function google(stateWrapper, ready) {
+			window.open("https://google.com");
+			ready();
+		}
+		function bing(stateWrapper, ready) {
+			window.open("https://bing.com");
+			ready();
+		}
+		var rollbackTo = false;
+		var originalState = false;
+		function storeState(stateWrapper, ready) {
+			rollbackTo = stateWrapper.current;
+			console.log("storeState called: ",rollbackTo);
+			ready();
+		}
+		function rollback(stateWrapper, ready) {
+			console.log("rollback called: ", rollbackTo, originalState);
+			console.log("answers at the time of user input: ", stateWrapper.answers);
+			if(rollbackTo!=false) {
+				if(originalState==false) {
+					originalState = stateWrapper.current.next;
+						console.log('stored original state');
+				}
+				stateWrapper.current.next = rollbackTo;
+				console.log('changed current.next to rollbackTo');
+			}
+			ready();
+		}
+		function restore(stateWrapper, ready) {
+			if(originalState != false) {
+				stateWrapper.current.next = originalState;
+				console.log('changed current.next to originalState');
+			}
+			ready();
+		}
+	</script>
+	<script>
+		jQuery(function($){
+			convForm = $('#chat').convform({selectInputStyle: 'disable'});
+			console.log(convForm);
+		});
+	</script>
+</body>
+</html>
