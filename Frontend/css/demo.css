@@ -25,3 +25,19 @@ section#demo {
     box-shadow: 5px 15px 28px 30px rgba(0, 0, 0, 0.075);
     padding: 7px 15px;
 }
+
+figure {
+width: 50%;
+height: 550px;
+line-height: 250px;
+text-align: center;
+margin-top: 40px;
+
+}
+
+img {
+/*border-radius: 50%;	*/
+vertical-align: middle;
+
+}
+

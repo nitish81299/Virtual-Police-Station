@@ -1,22 +1,16 @@
 figure {
-width: 100%;
+width: 50%;
 height: 550px;
 line-height: 250px;
 text-align: center;
+margin-top: 40px;
+
 }
 
 img {
-	
+border-radius: 50%;	
 vertical-align: middle;
+
 }
 
-.navbar {
-  background-color: white;
-  width: 100%;
-  min-height: 3.25rem;
-  position: fixed;
-  z-index: 30; }
 
-#get-started{
-	margin-bottom: 70px;
-}
