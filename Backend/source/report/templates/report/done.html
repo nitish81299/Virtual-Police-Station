@@ -1,0 +1,12 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+
+    <h4>{% trans 'You have successfully filed your FIR.' %}</h4>
+
+    <a href="{% url 'report:pdf' %}"><button class="btn btn-primary">{% trans 'View FIR' %}</button></a>
+
+{% endblock %}
