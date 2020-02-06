@@ -1,0 +1,10 @@
+.*
+.directory
+.gitkeep
+.pyc
+node_modules
+package-lock.json
+package.json
+venv
+!.gitignore
+
