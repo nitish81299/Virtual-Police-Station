@@ -8,19 +8,62 @@
 	<link rel="stylesheet" type="text/css" href="css/chatbot.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/demo.css">
+	<link rel="stylesheet" href="css/mystyles.css">
+	
 </head>
-<body>
 	<body>
+		<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <img src="logo/logo.svg" width="200" height="100">
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-end">
+      
+      <a class="navbar-item" onclick="location.href='index.html'" value="Home" style="margin-right: 5%">Home</a>
+      <a class="navbar-item" onclick="location.href='about.html'" value="About" style="margin-right: 5%">About</a>
+      <a class="navbar-item" onclick="location.href='contact.html'" value="Contact" style="margin-right: 5%;">Contact</a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          <i class="fas fa-language"></i>
+          Language
+        </a>
+           <div class="navbar-dropdown is-right">
+          <a class="navbar-item">
+            English
+          </a>
+          <a class="navbar-item">
+            Spanish
+          </a>
+          <a class="navbar-item">
+            French
+          </a>
+        <!--  <hr class="navbar-divider">-->
+          <div class="navbar-item">
+            Hindi
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>
+    <center>
+    	 <img id="police"
+          src="logo/avatar.jpg"
+          style="width:120px;height:120px; margin-top: 20px; margin-bottom: 20px;"
+        />
+    </center>
     <center>
       <h1 id="main">
         Virtual Police Officer
       </h1>
-    </center>
-    <center>
-    	 <img id="police"
-          src="logo/avatar.jpg"
-          style="width:80px;height:80px; margin-top: 20px;"
-        />
     </center>
 	<section id="demo">
 	    <div class="vertical-align">
@@ -30,15 +73,15 @@
 	                    <div class="card no-border">
 	                        <div id="chat" class="conv-form-wrapper">
 	                            <form action="" method="GET" class="hidden">
-	                                <input type="text" name="welcm" data-conv-question="Hello! Welcome to virtual police station. I am Victor and I am here to help you." name="first-question" data-no-answer="true">
+	                                <input type="text" data-conv-question="Hello! Welcome to virtual police station. I am Victor and I am here to help you." name="first-question" data-no-answer="true">
 	                                  <!--  <option value="yes">Yes</option>
 	                                    <option value="sure">Sure!</option>--->
 	                                <input type="text" name="name" data-conv-question="Alright! First, tell me your full name, please.|Okay! Please, tell me your name first." data-pattern="^[A-Za-z]">
 	                                <input type="text" data-conv-question="Hello, {name}:0! It's a pleasure to meet you." data-no-answer="true">
 	                              
-	                                <input type="text" name="aadhar" data-conv-question="Please enter your Aadhar Card Number" data-pattern="^[0-9]{12}" multiple>
+	                                <input type="text" name="aadhar" data-conv-question="Please enter your Aadhar Card Number" data-pattern="^[0-9]{12}$" multiple>
 	                                    
-	                                <input type="text" name="contact" data-conv-question="Please enter your contact number linked to your Aadhar card." data-pattern="^[1-9]">
+	                                <input type="text" name="contact" data-conv-question="Please enter your contact number linked to your Aadhar card." data-pattern="^[789][0-9]{9}$">
 	                                <!--    <option value="yes">Yes</option>
 	                                    <option value="no">No</option>
 	                               
@@ -63,13 +106,13 @@
 									
 									<input data-conv-question="Please enter the place of incident." type="text" name="incident" required placeholder="incident" data-pattern="^[A-Za-z]">
 
-									<input data-conv-question="Please enter the time and of incident. (In 24 hours format.)" type="text" name="time" required placeholder="time" data-pattern="^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$">
+									<input data-conv-question="Please enter the time of incident. (In 24 hours format.)" type="text" name="time" required placeholder="time" data-pattern="^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$">
 
 									<input data-conv-question="Can you describe the incident in detail." type="text" name="details" required placeholder="Describe">
 
 
 	                                <select data-conv-question="Thank you for your patience. You are 1 click away from filling your FIR ! Click on submit !" id="">
-	                                    <option value="">Submit</option>
+	                                    <!-- <option onclick="location.href='/home/nitish81299/dev/SIH/Virtual-Police-Station/Frontend/thank-you.html'">Submit</option> -->
 	                                </select>
 	                            </form>
 	                        </div>
@@ -79,9 +122,13 @@
 	        </div>
 	    </div>
 	</section>
+	<center>
+	<button class="button is-primary is-rounded button is-medium" onclick="location.href='thank-you.html'" value="FIR">SUBMIT</button>
+	</center>
 	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
 	<script type="text/javascript" src="js/autosize.min.js"></script>
 	<script type="text/javascript" src="js/chatbot.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 
 	<script>
 		function google(stateWrapper, ready) {
