@@ -5,52 +5,37 @@
 		    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Virtual Police Station</title>
-    <link rel="stylesheet" href="css/mystyles.css">
-    <link rel="stylesheet" href="css/demo.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/new.css">
 </head>
 <body>
-	<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item">
-      <img src="logo/logo.svg" width="200" height="100">
-    </a>
+	<nav class="navbar navbar-light navbar-expand-md" style="background-color: #A82400;">
+    <a class="navbar-brand" href="#"><img src="logo/logo.svg" width="100" height="30"></a>
+    
+    <button data-toggle='collapse' data-target='#collapsed' class='navbar-toggler'> <span class='navbar-toggler-icon'></span> </button>
 
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-end">
-      
-      <a class="navbar-item" onclick="location.href='index.html'" value="Home" style="margin-right: 5%">Home</a>
-      <a class="navbar-item" onclick="location.href='about.html'" value="About" style="margin-right: 5%">About</a>
-      <a class="navbar-item" onclick="location.href='contact.html'" value="Contact" style="margin-right: 5%;">Contact</a>
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          <i class="fas fa-language"></i>
-          Language
-        </a>
-           <div class="navbar-dropdown is-right">
-          <a class="navbar-item">
-            English
-          </a>
-          <a class="navbar-item">
-            Spanish
-          </a>
-          <a class="navbar-item">
-            French
-          </a>
-        <!--  <hr class="navbar-divider">-->
-          <div class="navbar-item">
-            Hindi
-          </div>
-      </div>
+    <div class="collapse navbar-collapse" id="collapsed">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item navilink" onclick="location.href='index.html'" value="Home">
+                <a class="nav-link " href="#">Home</a>
+            </li>
+            <li class="nav-item navilink" onclick="location.href='about.html'" value="About">
+                <a class="nav-link " href="#">About</a>
+            </li>
+            <li class="nav-item navilink" onclick="location.href='contact.html'" value="Contact">
+                <a class="nav-link " href="#">Contact</a>
+            </li>
+            <li class="nav-item dropdown navilink">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-us"> </span> Language</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown09">
+                    <a class="dropdown-item" href="#fr"><span class="flag-icon flag-icon-fr"> </span>  English</a>
+                    <a class="dropdown-item" href="#fr"><span class="flag-icon flag-icon-fr"> </span>  French</a>
+                    <a class="dropdown-item" href="#it"><span class="flag-icon flag-icon-it"> </span>  Italian</a>
+                    <a class="dropdown-item" href="#ru"><span class="flag-icon flag-icon-ru"> </span>  Russian</a>
+                </div>
+            </li>
+        </ul>           
     </div>
-  </div>
-  </div>
 </nav>
 
 <center>
@@ -93,6 +78,9 @@
 	</a>
 	</center>
 </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>
